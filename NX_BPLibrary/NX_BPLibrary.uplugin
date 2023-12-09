@@ -1,0 +1,28 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "NX_BPLibrary",
+	"Description": "",
+	"Category": "Other",
+	"CreatedBy": "Flying Fox Ent",
+	"CreatedByURL": "https://github.com/DiabloFox/UE_NXUtilities",
+	"DocsURL": "https://github.com/DiabloFox/UE_NXUtilities",
+	"MarketplaceURL": "",
+	"SupportURL": "https://github.com/DiabloFox/UE_NXUtilities",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "NX_BPLibrary",
+			"Type": "Runtime",
+			"LoadingPhase": "PreLoadingScreen",
+			"PlatformAllowList": [
+				"Win64",
+				"Switch"
+			]
+		}
+	]
+}
