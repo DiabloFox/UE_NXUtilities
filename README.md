@@ -11,13 +11,12 @@ Here the differents nodes available with this plugin:
 And the differents names of earch nodes: 
 
 ![Node Names](Documentation/Names.PNG)
-<<<<<<< HEAD
 
 
 ## Example Project
 
-Find the example project in the Example folder.
-[![Example Project](https://github.com/DiabloFox/UE_NXUtilities/releases/tag/Example)]
+Find the example project in the Example releases.
+[[Example Project](https://github.com/DiabloFox/UE_NXUtilities/releases/tag/Example)]
 
 ## How to Install
 
