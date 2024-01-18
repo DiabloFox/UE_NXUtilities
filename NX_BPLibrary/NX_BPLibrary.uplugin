@@ -1,16 +1,16 @@
 {
 	"FileVersion": 3,
-	"Version": 1,
-	"VersionName": "1.0",
+	"Version": 2,
+	"VersionName": "1.5",
 	"FriendlyName": "NX_BPLibrary",
-	"Description": "",
+	"Description": "A Plugin to implement various NX SDK Function to Unreal Engine Blueprints",
 	"Category": "Other",
 	"CreatedBy": "Flying Fox Ent",
-	"CreatedByURL": "https://github.com/DiabloFox/UE_NXUtilities",
-	"DocsURL": "https://github.com/DiabloFox/UE_NXUtilities",
+	"CreatedByURL": "",
+	"DocsURL": "",
 	"MarketplaceURL": "",
-	"SupportURL": "https://github.com/DiabloFox/UE_NXUtilities",
-	"CanContainContent": true,
+	"SupportURL": "",
+	"CanContainContent": false,
 	"IsBetaVersion": false,
 	"IsExperimentalVersion": false,
 	"Installed": false,
@@ -18,7 +18,7 @@
 		{
 			"Name": "NX_BPLibrary",
 			"Type": "Runtime",
-			"LoadingPhase": "PreLoadingScreen",
+			"LoadingPhase": "Default",
 			"PlatformAllowList": [
 				"Win64",
 				"Switch"
