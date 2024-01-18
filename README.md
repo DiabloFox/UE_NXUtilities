@@ -8,10 +8,13 @@ Here the differents nodes available with this plugin:
 
 
 
-And the differents names of earch nodes: 
+And the differents names of each nodes: 
 
 ![Node Names](Documentation/Names.PNG)
 
+And now there is a Component for the Dock / Handle mode that change the Settings when you switch between them.
+
+![Dock Handle](Documentation/DynResSettings.PNG)
 
 ## Example Project
 
