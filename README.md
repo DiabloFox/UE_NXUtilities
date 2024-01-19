@@ -6,11 +6,13 @@ Here the differents nodes available with this plugin:
 
 ![Node Example](Documentation/Nodes.PNG)
 
-
+Use "Set BoostMode" to overclock the CPU and Underclock the GPU to make loading faster.
+![Boost Node](Documentation/Nodes_2.PNG)
 
 And the differents names of each nodes: 
 
 ![Node Names](Documentation/Names.PNG)
+
 
 And now there is a Component for the Dock / Handle mode that change the Settings when you switch between them.
 

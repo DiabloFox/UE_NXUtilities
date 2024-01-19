@@ -39,4 +39,14 @@ class UNX_BPLibraryBPLibrary : public UBlueprintFunctionLibrary
 	//Console Infos Functions
 	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Get IsDocked Variable", Keywords = "NX_BPLibrary"), Category = "NX_BPLibrary|ConsoleInfos")
 	static bool GetOperationMode();
+
+	//Set Boost mode (1 = Normal / 2 = Boost)
+	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Set BoostMode", Keywords = "NX_BPLibrary"), Category = "NX_BPLibrary|AppInfos")
+	static void BoostMode(int boosttype);
+
+	//Get a Bool variable for Demo
+	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Get IsDemo Variable", Keywords = "NX_BPLibrary"), Category = "NX_BPLibrary|AppInfos")
+		static bool GetDemoEnabled();
+
+
 };

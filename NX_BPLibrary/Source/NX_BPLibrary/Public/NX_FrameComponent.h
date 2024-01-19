@@ -41,6 +41,9 @@ public:
 	//Docked Mode Properties
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Docked Properties")
 		bool d_UseDynRes = true;
+	//Boost the CPU from 1020 MHz to 1785 MHz (SDEV only)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Docked Properties")
+		bool d_UseOverclock = true;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Docked Properties")
 		bool d_UseVSync = false;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Docked Properties")
@@ -57,6 +60,11 @@ public:
 	//Handle Mode Properties
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Handle Properties")
 		bool h_UseDynRes = true;
+
+	//Boost the CPU from 1020 MHz to 1785 MHz (SDEV only)
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Handle Properties")
+		bool h_UseOverclock = false;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Handle Properties")
 		bool h_UseVSync = true;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Handle Properties")
@@ -76,10 +84,6 @@ protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
 
-public:	
-	// Called every frame
-	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
-
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 		bool bIsSwitchDocked;
 
@@ -88,4 +92,8 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 		bool bPlayModeSaved = false;
+
+public:	
+	// Called every frame
+	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 };

@@ -86,7 +86,9 @@ void UNX_FrameComponent::ModeChanged(){
 
 //Apply all the configs
 void UNX_FrameComponent::ApplyNXFrameConfig() {
+	#if PLATFORM_WINDOWS
 
+	#elif PLATFORM_SWITCH
 	if (bIsSwitchDocked == true) {
 
 		//Everything about DynRes is Cmd but the activation is UserSettings ?! Why man ....
@@ -99,6 +101,14 @@ void UNX_FrameComponent::ApplyNXFrameConfig() {
 		else {
 			ExecuteCmd("r.VSync 0");
 		}
+		if (d_UseOverclock == true) {
+			nn::oe::SetCpuOverclockEnabled(true);
+		}
+		else {
+			nn::oe::SetCpuOverclockEnabled(false);
+		}
+		
+		
 		ExecuteCmd("t.MaxFPS " + FString::FromInt(d_MaxFPS));
 		ExecuteCmd("r.DynamicRes.MinScreenPercentage " + FString::FromInt(d_MinScreenPercent));
 		ExecuteCmd("r.DynamicRes.MaxScreenPercentage " + FString::FromInt(d_MaxScreenPercent));
@@ -118,6 +128,8 @@ void UNX_FrameComponent::ApplyNXFrameConfig() {
 		else {
 			ExecuteCmd("r.VSync 0");
 		}
+
+		nn::oe::SetCpuOverclockEnabled(h_UseOverclock);
 		ExecuteCmd("t.MaxFPS " + FString::FromInt(h_MaxFPS));
 		ExecuteCmd("r.DynamicRes.MinScreenPercentage " + FString::FromInt(h_MinScreenPercent));
 		ExecuteCmd("r.DynamicRes.MaxScreenPercentage " + FString::FromInt(h_MaxScreenPercent));
@@ -129,7 +141,7 @@ void UNX_FrameComponent::ApplyNXFrameConfig() {
 
 		PrintDebugText("NX Handle Config Applied", FColor::Purple, 5.0f);
 	}
-	
+	#endif
 
 }
 
@@ -141,6 +153,15 @@ void UNX_FrameComponent::PrintSavedConfigs() {
 
 		if (bIsSwitchDocked == true) {
 			GEngine->AddOnScreenDebugMessage(-1, 0.f, FColor::Red, FString::Printf(TEXT("Use Dynamic Resolution : %s"), d_UseDynRes ? TEXT("true") : TEXT("false")));
+		#if PLATFORM_SWITCH
+			if (nn::oe::IsCpuOverclockEnabled()) {
+				GEngine->AddOnScreenDebugMessage(-1, 0.f, FColor::Red, FString::Printf(TEXT("Use Overclock : True")));
+			}
+			else {
+				GEngine->AddOnScreenDebugMessage(-1, 0.f, FColor::Red, FString::Printf(TEXT("Use Overclock : False")));
+			}
+			
+		#endif
 
 			GEngine->AddOnScreenDebugMessage(-1, 0.f, FColor::Red, FString::Printf(TEXT("Use VSync : %s"), d_UseVSync ? TEXT("true") : TEXT("false")));
 

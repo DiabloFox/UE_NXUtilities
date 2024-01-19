@@ -27,3 +27,31 @@ bool UNX_BPLibraryBPLibrary::GetOperationMode()
 	#endif
 	return bIsSwitchDocked;
 }
+
+
+void UNX_BPLibraryBPLibrary::BoostMode(int boosttype) {
+#if PLATFORM_WINDOWS
+	//Nothing to do here ...
+#elif PLATFORM_SWITCH
+	//Apply Switch boost
+	if (boosttype == 2) {
+		nn::oe::SetCpuBoostMode(nn::oe::CpuBoostMode_FastLoad);
+	} else {
+		nn::oe::SetCpuBoostMode(nn::oe::CpuBoostMode_Normal);
+	}
+	
+#endif
+}
+
+
+bool UNX_BPLibraryBPLibrary::GetDemoEnabled() {
+
+	bool bIsAppDemo;
+	#if PLATFORM_WINDOWS
+		bIsAppDemo = false;
+	#elif PLATFORM_SWITCH
+		bIsAppDemo = nn::oe::IsInStoreDemoModeEnabled();
+	#endif
+
+	return bIsAppDemo;
+}
